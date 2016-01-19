@@ -1,11 +1,30 @@
-var app = angular.module('MyApp', ['ngAnimate', 'ui.bootstrap'])
+// Code goes here
+var app = angular.module('MyApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
+  .config(function($routeProvider) {
+    $routeProvider
+      .when('/home', {
+        templateUrl: 'home.html',
+        controller: 'homeController'
+      })
+      .when('/contact', {
+        templateUrl: 'contact.html',
+        controller: 'contactController'
+      });
+  })
+
+.controller('homeController', function($scope) {
+    $scope.message = "Home page";
+  })
+  .controller('contactController', function($scope) {
+    $scope.message = "Contact page";
+    $scope.msg = "You Application !"
+  })
   .controller('AlertControlle', function($scope) {
     $scope.alerts = [{
-        type: 'success',
-        msg: 'Hello AngularsJs.'
-      }
-    ];
-    
+      type: 'success',
+      msg: 'Hello AngularsJs.'
+    }];
+
     $scope.i = 0
     $scope.addAlert = function() {
       $scope.i++
@@ -23,7 +42,7 @@ var app = angular.module('MyApp', ['ngAnimate', 'ui.bootstrap'])
           type: '',
           msg: 'Success !'
         });
-        $scope.state = "Delete sucess !"        
+        $scope.state = "Delete sucess !"
       } else {
         $scope.alerts.splice($scope.i + 1, 1);
         $scope.isHide = false
@@ -45,7 +64,7 @@ app.controller('controller1', function($scope) {
 
   };
   $scope.onHide = function() {
-    if ($show == true) {
+    if ($show === true) {
       $scope.message2 = ""
       $show = false
     } else {
@@ -53,6 +72,4 @@ app.controller('controller1', function($scope) {
       $show = true
     }
   }
-
-
 });
