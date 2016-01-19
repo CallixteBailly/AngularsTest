@@ -1,0 +1,14 @@
+<section class="home">
+  <h2>HOME</h2>
+  <p>
+    {{message}}
+  </p>
+  <div>
+    <div ng-controller="AlertControlle">
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+      <button type="button" class='btn btn-primary' ng-click="addAlert()" ng-show="singleModel">Add Alerte</button>
+      <button type="button" class="btn btn-default" ng-model="singleModel" ng-click="hide()" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{state}}</button>
+    </div>
+  </div>
+  <br>
+</section>
