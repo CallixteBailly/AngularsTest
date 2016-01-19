@@ -6,13 +6,28 @@ var app = angular.module('MyApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
         templateUrl: 'home.html',
         controller: 'homeController'
       })
+      .when('/login', {
+        templateUrl: 'login.html',
+        controller: 'homeController'
+      })
       .when('/contact', {
         templateUrl: 'contact.html',
         controller: 'contactController'
       });
   })
-
-.controller('homeController', function($scope) {
+  .controller('contenaireCtrl', function($scope) {
+    $scope.tabs = [{
+      title: 'HOME',
+      content: 'home.html'
+    }, {
+      title: 'Contact',
+      content: 'contact.html'
+    }, {
+      title: 'Login',
+      content: 'login.html'
+    }];
+  })
+  .controller('homeController', function($scope) {
     $scope.message = "Home page";
   })
   .controller('contactController', function($scope) {
