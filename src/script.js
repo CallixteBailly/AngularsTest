@@ -1,6 +1,6 @@
 // Code goes here
 var app = angular.module('MyApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
-  .controller('contenaireCtrl', function($scope) {
+  .controller('containerCtrl', function($scope) {
     $scope.tabs = [{
       title: 'HOME',
       content: 'home.html'
