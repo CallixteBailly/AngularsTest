@@ -1,20 +1,5 @@
 // Code goes here
 var app = angular.module('MyApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
-  .config(function($routeProvider) {
-    $routeProvider
-      .when('/home', {
-        templateUrl: 'home.html',
-        controller: 'homeController'
-      })
-      .when('/login', {
-        templateUrl: 'login.html',
-        controller: 'homeController'
-      })
-      .when('/contact', {
-        templateUrl: 'contact.html',
-        controller: 'contactController'
-      });
-  })
   .controller('contenaireCtrl', function($scope) {
     $scope.tabs = [{
       title: 'HOME',
