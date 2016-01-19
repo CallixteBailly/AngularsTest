@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="MyApp">
+<html lang="en" ng-app="MyApp">
 
 <head>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
@@ -10,12 +10,20 @@
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
-  <div ng-view></div>
-  <nav>
-    <a href="#/home" class="btn btn-primary">Page Home</a>
-    <a href="#/contact" class="btn btn-primary">Page Contact</a>
-  </nav>
+<body class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Test AngularJS + BootStrap + Route</h1>
+      <div id="view" ng-view></div>
+    </div>
+  </div>
+  <div ng-controller="contenaireCtrl">
+    <uib-tabset>
+      <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+        <div class="slide-animate" ng-include="tab.content"></div>
+      </uib-tab>
+      <uib-tabset>
   </div>
 </body>
+
 </html>
