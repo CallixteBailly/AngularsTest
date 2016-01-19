@@ -1,4 +1,4 @@
-var app = angular.module('ui.bootstrap.demo', ['ngAnimate', 'ui.bootstrap'])
+var app = angular.module('MyApp', ['ngAnimate', 'ui.bootstrap'])
   .controller('AlertControlle', function($scope) {
     $scope.alerts = [{
         type: 'success',
