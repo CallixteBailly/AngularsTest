@@ -17,7 +17,7 @@
       <div id="view" ng-view></div>
     </div>
   </div>
-  <div ng-controller="contenaireCtrl">
+  <div ng-controller="containerCtrl">
     <uib-tabset>
       <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
         <div class="slide-animate" ng-include="tab.content"></div>
